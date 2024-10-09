@@ -1,0 +1,29 @@
+{
+  "name": "realtime",
+  "version": "1.0.0",
+  "description": "An example of how to build a realtime app with Node.js",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baynezy/RealtimeDemo.git"
+  },
+  "author": "Simon Baynes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baynezy/RealtimeDemo/issues"
+  },
+  "homepage": "https://github.com/baynezy/RealtimeDemo#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "mongojs": "^3.1.0",
+    "mustache-express": "^1.2.1",
+    "q": "^1.4.1",
+    "redis": "^0.12.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-prompt": "^1.3.0"
+  }
+}

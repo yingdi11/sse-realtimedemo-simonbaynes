@@ -1,0 +1,29 @@
+# Use the latest Node.js version
+FROM node:20.15.1
+
+# Create a system group and user for running the app
+RUN groupadd -r nodejs && useradd -m -r -g nodejs nodejs
+
+# Set the user to root to install dependencies and set up the environment
+USER root
+
+# Set the working directory inside the container
+WORKDIR /usr/src/realtime
+
+# Copy package.json and package-lock.json (if available) to the working directory
+COPY package*.json ./
+
+# Install production dependencies
+RUN npm install --production
+
+# Copy the rest of the application code to the container
+COPY . .
+
+# Expose port 8081
+EXPOSE 8081
+
+# Switch to the non-root user for security purposes
+USER nodejs
+
+# Start the application
+CMD ["node", "app.js"]

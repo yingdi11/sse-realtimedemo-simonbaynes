@@ -1,0 +1,29 @@
+# Use the latest Node.js version
+FROM node:20.15.1
+
+# Create a system group and user for running the app
+RUN groupadd -r nodejs && useradd -m -r -g nodejs nodejs
+
+# Set the user to root to install dependencies
+USER root
+
+# Create an app directory (in the Docker container)
+WORKDIR /usr/src/realtime
+
+# Copy package.json and package-lock.json (if available) to the working directory
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install --production
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose port 8082
+EXPOSE 8082
+
+# Switch to the non-root user
+USER nodejs
+
+# Start the application
+CMD ["node", "post.js"]
