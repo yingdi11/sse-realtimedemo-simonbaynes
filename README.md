@@ -24,7 +24,7 @@ sudo yum update -y
 sudo yum install git -y
 git clone https://github.com/yingdi11/sse-realtimedemo-simonbaynes.git
 cd sse-realtimedemo-simonbaynes
-sed -i "s/localhost/$(hostname -f)/g" static/index.html
+sed -i "s/ip address/$(hostname -f)/g" "static/index.html"
 
 sudo yum update -y
 sudo yum install -y gcc-c++ make
