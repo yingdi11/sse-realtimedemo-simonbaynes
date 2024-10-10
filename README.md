@@ -19,12 +19,13 @@ This code is part of a 2 part blog series on building real-time web apps with Se
 
 
 
-
+#!/bin/bash
 sudo yum update -y
 sudo yum install git -y
 git clone https://github.com/yingdi11/sse-realtimedemo-simonbaynes.git
 cd sse-realtimedemo-simonbaynes
 sed -i "s/ip address/$(hostname -f)/g" "static/index.html"
+sed -i "s/ip address/$(hostname -f)/g" "views/postupdate.html"
 
 sudo yum update -y
 sudo yum install -y gcc-c++ make
