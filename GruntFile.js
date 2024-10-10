@@ -65,5 +65,6 @@ module.exports = function(grunt) {
 	// 	"config"
 	// ]);
 
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.registerTask('default', ['uglify']);
 }
