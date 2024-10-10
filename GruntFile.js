@@ -60,8 +60,10 @@ module.exports = function(grunt) {
 		grunt.log.write("Config file generated").ok();
 	});
 	
-	grunt.registerTask("default", [
-		"prompt:config",
-		"config"
-	]);
+	// grunt.registerTask("default", [
+	// 	"prompt:config",
+	// 	"config"
+	// ]);
+
+	grunt.registerTask('default', ['uglify']);
 }
