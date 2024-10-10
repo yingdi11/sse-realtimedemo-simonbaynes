@@ -24,6 +24,8 @@ sudo yum update -y
 sudo yum install git -y
 git clone https://github.com/yingdi11/sse-realtimedemo-simonbaynes.git
 cd sse-realtimedemo-simonbaynes
+sed -i "s/localhost/$(hostname -f)/g" static/index.html
+
 sudo yum update -y
 sudo yum install -y gcc-c++ make
 curl -sL https://rpm.nodesource.com/setup_18.x | sudo -E bash -

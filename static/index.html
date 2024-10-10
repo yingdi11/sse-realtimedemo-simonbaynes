@@ -13,8 +13,8 @@
     <script>
         var live = {
             init : function() {
-        		var source = new EventSource("http://localhost:8081/api/updates");
-        		
+        		//var source = new EventSource("http://localhost:8081/api/updates");
+        		var source = new EventSource(`http://${window.location.host}/api/updates`);
         		source.addEventListener("message", function(event) {
 					live.addItem(event.data);
         		}, false);
