@@ -29,5 +29,13 @@ sudo yum install -y gcc-c++ make
 curl -sL https://rpm.nodesource.com/setup_18.x | sudo -E bash -
 sudo yum install -y nodejs
 npm install
-sudo npm install -g grunt-cli
 
+
+sudo yum install -y docker
+sudo service docker start
+sudo systemctl enable docker
+sudo usermod -aG docker ec2-user
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+sudo docker-compose up

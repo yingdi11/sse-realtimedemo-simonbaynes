@@ -3,8 +3,10 @@ var express = require("express"),
 	dataChannel = require("./custom_modules/data-channel"),
 	eventStorage = require("./custom_modules/event-storage"),
 	app = express();
-	
+var cors = require('cors');
+
 app.use(express.static("./static"));
+app.use(cors());
 
 app.get("/api/updates", function(req, res){
 	initialiseSSE(req, res);

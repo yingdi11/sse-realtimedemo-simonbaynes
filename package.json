@@ -15,6 +15,7 @@
   "homepage": "https://github.com/baynezy/RealtimeDemo#readme",
   "dependencies": {
     "body-parser": "^1.13.3",
+    "cors": "^2.8.5",
     "express": "^4.13.3",
     "mongojs": "^3.1.0",
     "mustache-express": "^1.2.1",
